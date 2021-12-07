@@ -1,6 +1,5 @@
 <?php
 namespace App\Controllers;
-//require_once "app/models/Servicio.php";
 
 use App\Models\Foto;
 
@@ -9,7 +8,6 @@ class FotosController {
 
     function __construct()
     {
-        // echo "En UserController";
     }
 
     public function index()
@@ -37,11 +35,9 @@ class FotosController {
     
     public function show($args)
     {
-        // $id = (int) $args[0];
         list($id) = $args;
         $fotos = Foto::find($id);
-        // var_dump($user);
-        // exit();
+        
         require('app/views/fotos/show.php');        
     }
     public function edit($arguments)

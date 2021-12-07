@@ -1,7 +1,7 @@
 <header>
     <div id="arribaIzquierda">
-        <a id="mas" href="/home/reservar">+</a>
-        <a id="reservar"  href="/citas/reservar">RESERVAR</a>
+        <a id="mas" href="/home/menu">+</a>
+        <a id="reservar"  href="/home/menu">RESERVAR</a>
     </div>
     <div id="arribaDerecha">
         

@@ -18,7 +18,6 @@
           <th>Descripcion</th>
           <th>Tipo de Servicio</th>
           <th>Precio</th>
-          <th></th>
         </tr>
 
         <?php foreach ($servicios as $key => $servicio) { ?>

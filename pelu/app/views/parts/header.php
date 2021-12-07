@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Peluqueria Candis</a>
+  <a class="navbar-brand" href="/home/logout">Peluqueria Candis</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -25,6 +25,10 @@
       <li class="nav-item active">
       <a class="nav-link" href="<?php echo isset($_SESSION['user']) ? PATH."fotos/index":"" ?>">
         <?php echo isset($_SESSION['user']) ? "Fotos":""?></a>
+      </li>
+      <li class="nav-item active">
+      <a class="nav-link" href="<?php echo isset($_SESSION['user']) ? PATH."userServicio/index":"" ?>">
+        <?php echo isset($_SESSION['user']) ? "UsuarioServicio":""?></a>
       </li>
       </ul>
 

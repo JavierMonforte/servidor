@@ -28,7 +28,15 @@
     </div>
     <div class="form-group">
         <label>Tipo de Servicio</label>
-        <input type="number" name="tipoServicio" class="form-control">
+        <select name="tipoServicio" id="selectCreate" class="form-control">
+      <optgroup>
+        <?php 
+        foreach ($tipos as $key => $value) {
+          echo "<option value='".$value->id."'>$value->tipo</option>"; 
+        }
+        ?>
+      </optgroup>
+    </select>
     </div>
     <div class="form-group">
         <label>Precio</label>

@@ -47,12 +47,7 @@ class UsersController
         $user->apellido = $_REQUEST['surname'];
         $user->fechaNacimiento = $_REQUEST['birthdate'];
         $user->email = $_REQUEST['email'];
-        $user->password = $_REQUEST['password'];
-        $user->active = $_REQUEST['active'];
-        $user->admin = $_REQUEST['admin'];
-
         $user->insert();
-        $user->setPassword($_REQUEST['password']);
         header('Location:'.PATH.'users/');
     }
     
@@ -80,12 +75,7 @@ class UsersController
         $user->apellido = $_REQUEST['surname'];
         $user->fechaNacimiento = $_REQUEST['birthdate'];
         $user->email = $_REQUEST['email'];
-        $user->password = $_REQUEST['password'];
-        $user->email = $_REQUEST['email'];
-        $user->email = $_REQUEST['email'];
-
         $user->save();
-        $user->setPassword($_REQUEST['password']);
         header('Location:'.PATH.'users');
     }
 

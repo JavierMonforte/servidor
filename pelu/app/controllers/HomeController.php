@@ -12,12 +12,10 @@ class HomeController
 
     function __construct()
     {
-        //echo "HomeController -> construct <br>";
     }
 
     public function index()
     {
-        // echo "<p>En Index()</p>";
         
         require ("app/views/index.php");
     }
@@ -25,7 +23,6 @@ class HomeController
     {
         require_once "app/models/Servicio.php";
         $servicios = Servicio::all();
-        // echo "<p>En Index()</p>";
         require ("app/views/web/servicios.php");
     }
     public function menu(){
@@ -36,7 +33,6 @@ class HomeController
         require_once "app/models/User.php";
 
         $users = User::all();
-        // echo "<p>En Index()</p>";
         require ("app/views/web/peluqueros.php");
     }
     public function galeria(){
@@ -49,8 +45,17 @@ class HomeController
         require_once "app/models/User.php";
 
         $users = User::all();
-        // echo "<p>En Index()</p>";
         require ("app/views/home.php");
+    }
+    public function login(){
+        require("app/views/login.php");
+    }
+    public function logout()
+    {
+        unset($_SESSION['user']);
+        unset($_SESSION['message']);
+        session_destroy();
+        require "app/views/web/menu.php";
     }
 
 }

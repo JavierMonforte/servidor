@@ -29,7 +29,7 @@
           <tr>
           <td><?php echo $servicio->servicio ?></td>
           <td><?php echo $servicio->descripcion ?></td>
-          <td><?php echo $servicio->tipoServicio ?></td>
+          <td><?php echo $servicio->typeServicio->tipo ?></td>
           <td><?php echo $servicio->precio ?></td>
           <td><?php echo $servicio->genero ?></td>
           <td><?php echo $servicio->tiempo ?></td>

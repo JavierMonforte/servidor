@@ -3,6 +3,8 @@ namespace App\Controllers;
 //require_once "app/models/Servicio.php";
 
 use App\Models\Servicio;
+use App\Models\Tipo;
+
 
 class ServiciosController {
 
@@ -16,12 +18,15 @@ class ServiciosController {
     {
         //buscar datos
         $servicios = Servicio::all();
+        $tipos = Tipo::all();
+
         //pasar a la vista
         require("app/views/servicios/index.php");
     }
     
     public function create()
     {
+        $tipos = Tipo::all();
         require 'app/views/servicios/create.php';
     }
     
@@ -53,6 +58,7 @@ class ServiciosController {
     }
     public function edit($arguments)
     {
+        $tipos = Tipo::all();
         $idservicio = (int) $arguments[0];
         $servicios = Servicio::find($idservicio);
         require 'app/views/servicios/edit.php';
@@ -79,5 +85,6 @@ class ServiciosController {
         $servicios = Servicio::find($id);
         $servicios->delete();
         header('Location:'.PATH.'servicios');
-    }    
+    }   
+    
 }

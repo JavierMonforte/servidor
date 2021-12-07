@@ -42,9 +42,10 @@ CREATE TABLE `servicios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `user_servicio` (
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `user_id` int NOT NULL,
   `servicio_id` int NOT NULL,
- PRIMARY KEY (user_id, servicio_id),
+ PRIMARY KEY (id),
  FOREIGN KEY (user_id) REFERENCES users(id),
  FOREIGN KEY (servicio_id) REFERENCES servicios(idservicio)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -89,8 +90,8 @@ INSERT INTO `users` (`id`, `nombre`, `apellido`, `email`, `fechaNacimiento`, `ad
 (7, 'Nacho', 'Villa', 'nacho@penya.com', '2001-8-18', 0)
 ;
 INSERT INTO `user_servicio` VALUES
-(1, 1),
-(1, 2)
+(1, 1, 1),
+(2, 1, 2)
 ;
 
 

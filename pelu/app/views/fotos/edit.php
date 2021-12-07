@@ -20,13 +20,13 @@
 
     <div class="form-group">
         <label>Servicio</label>
-        <input type="text" name="nombre" class="form-control"
+        <input type="text" name="nombre"  maxlength="50" class="form-control"
         value="<?php echo $fotos->nombre ?>"
         >
     </div>
     <div class="form-group">
         <label>descripcion</label>
-        <input type="text" name="descripcion" class="form-control"
+        <input type="text"  maxlength="200" name="descripcion" class="form-control"
         value="<?php echo $fotos->descripcion ?>"
         >
     </div>
@@ -38,7 +38,7 @@
     </div>
     <div class="form-group">
         <label>Url</label>
-        <input type="text" name="url" class="form-control"
+        <input type="text" name="url"  maxlength="100" class="form-control"
         value="<?php echo $fotos->url ?>"
         >
     </div>

@@ -142,12 +142,34 @@ footer {
 
 .fotos {
     width: 100%;
-    padding: 5rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
 .fotos div h3 {
+    text-align: center;
+}
+
+.galeria {
+    width: 25%;
+    height: 25%;
+    margin: 1rem;
+}
+
+.imagen {
+    width: 17rem;
+    height: 17rem;
+}
+
+.fotos h3,
+p {
+    padding: 1rem;
+    text-align: center;
+}
+
+.titulo {
+    margin: 0 auto;
+    padding: 3rem;
     text-align: center;
 }

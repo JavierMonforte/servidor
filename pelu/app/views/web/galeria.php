@@ -11,17 +11,16 @@
 
 </head>
 <body>
-<?php include("app/views/web/header.php");?>
-<h2 class="galeria">Galeria de fotos</h2>
+<h2 class="titulo">Galeria de fotos</h2>
 
 <div class="contenedor">
 
     <div class="fotos">
     <?php foreach ($fotos as $key => $foto) { ?>
-     <div>
+     <div class="galeria">
      <h3><?php echo $foto->nombre?></h3>  
-     <img src="<?php echo PATH.$foto->url?>" data-image-hd="<?php echo PATH.$foto->url?>" alt="<?php echo $foto->nombre ?>"> 
-     <p><?php echo $foto->descripcion?></p>
+     <img class="imagen" src="<?php echo PATH.$foto->url?>" data-image-hd="<?php echo PATH.$foto->url?>" alt="<?php echo $foto->nombre ?>"> 
+     <p class="descripcion"><?php echo $foto->descripcion?></p>
      </div>
      <?php } ?>
 
