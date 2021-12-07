@@ -1,0 +1,39 @@
+
+#general{
+    width: 40%;
+    margin: 0 auto;
+}
+header{
+    display: flex;
+}
+#nav {
+    margin: 0 auto;
+}
+h1{
+    color: darkblue;
+    text-transform: uppercase;
+    text-align: center;
+}
+a{
+    background-color: lightgrey;
+    margin: 10px;
+    padding: 5px 5px 5px 5px;
+    color: blue;
+    border-radius: 15%;
+
+}
+a:hover{
+    color: grey;
+}
+h2{
+    text-align: center;
+    color: black;
+}
+table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    margin: 0 auto;
+    color: black;
+    background-color: white;
+}
