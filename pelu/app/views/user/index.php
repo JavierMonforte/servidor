@@ -11,7 +11,7 @@
 
   <main role="main" class="container">
     <div class="starter-template">
-      <h1>Lista de usuarios</h1>
+      <h1>Lista de Peluqueros</h1>
       <p><a href="<?= PATH."users/create/".$user->id ?>" class="btn btn-primary">Nuevo</a>      <a href="<?= PATH."users/pdf" ?>" class="btn btn-primary">Pdf</a>        
 </p>
      

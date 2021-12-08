@@ -11,7 +11,7 @@
 
   <main role="main" class="container">
     <div class="starter-template">
-      <h1>Lista de User Servicio</h1>
+      <h1>Servicios por persona</h1>
       <p><a href="<?= PATH."userServicio/create/".$userServicio->id ?>" class="btn btn-primary">Nuevo</a></p>
 
       <table class="table table-striped table-hover">
