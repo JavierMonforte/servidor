@@ -30,8 +30,11 @@ namespace Core;
 *   6) Para usar librerías de terceros también usamos composer
 *       Podemos editar el composer.json o ejecutar composer require nombrelibreria
 *       >> composer require 'dompdf/dompdf'
+* sudo apt-get install php7.4-mbstring
+* sudo apt-get install php7.4-gd
+* sudo apt-get install xml
+* composer update
 */
-
 class App
 {
 
