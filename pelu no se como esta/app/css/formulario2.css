@@ -1,9 +1,0 @@
-* {
-    box-sizing: border-box;
-    border: 0px;
-    line-height: 1.5;
-}
-
-input:invalid {
-    border: 2px dashed red;
-}

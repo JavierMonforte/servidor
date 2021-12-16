@@ -102,6 +102,9 @@ li {
     line-height: 2em;
 }
 
+
+/*Footer*/
+
 #abajoIdquierda {
     float: left;
     width: 43%;
@@ -127,6 +130,9 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
+
+/*Galeria de Fotos*/
 
 .galeria {
     position: relative;

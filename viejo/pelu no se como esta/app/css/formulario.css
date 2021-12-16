@@ -1,0 +1,240 @@
+* {
+    box-sizing: border-box;
+    border: 0px;
+    line-height: 1.5;
+}
+
+h2 {
+    clear: both;
+    width: 100%;
+    text-align: center;
+}
+
+h4 {
+    margin: 0 auto;
+    text-align: center;
+    margin: 10px;
+}
+
+body {
+    font-family: system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+#formulario {
+    margin: 0 auto;
+    width: 80%;
+}
+
+#nombre {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    background-color: #e2e2e2;
+    padding: 1em;
+}
+
+select,
+textarea {
+    margin-bottom: 1.5rem;
+    background-color: #e2e2e2;
+    padding: 1em;
+    width: 100%;
+}
+
+p {
+    justify-content: center;
+}
+
+#submit {
+    margin: 0 auto;
+    background-color: #e2e2e2;
+    padding: 1em;
+    text-align: center;
+}
+
+#servicio {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    background-color: #e2e2e2;
+    padding: 1em;
+}
+
+table {
+    border: darkgray 0.5px solid;
+    margin: 0 auto;
+}
+
+#color {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    background-color: #e2e2e2;
+    padding: 1em;
+}
+
+#precio {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    background-color: #e2e2e2;
+    padding: 1rem;
+}
+
+#persona {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    background-color: #e2e2e2;
+    padding: 1rem;
+}
+
+#tipo {
+    width: 100%;
+    margin-bottom: 1.5em;
+    background-color: #e2e2e2;
+    padding: 1em;
+}
+
+#telefono {
+    width: 49%;
+    margin-right: 0.3em;
+    float: left;
+    line-height: 1.5;
+    margin-bottom: 1.5em;
+    background-color: #e2e2e2;
+    padding: 1em;
+}
+
+#email {
+    margin-left: 0.3em;
+    width: 49%;
+    float: right;
+    margin-bottom: 1.5em;
+    background-color: #e2e2e2;
+    padding: 1em;
+}
+
+#boton {
+    width: 100%;
+    text-align: center;
+}
+
+
+/*copia en negro menu css*/
+
+header {
+    width: 100%;
+}
+
+#arribaIzquierda {
+    position: fixed;
+    float: left;
+    width: 48%;
+    height: 4vh;
+}
+
+#arribaDerecha {
+    float: right;
+    width: 98%;
+    position: fixed;
+    height: 4vh;
+}
+
+#arribaDerecha a {
+    text-decoration: none;
+}
+
+#arribaIzquierda a {
+    float: left;
+    margin: 1%;
+    text-decoration: none;
+    color: black;
+    vertical-align: middle;
+}
+
+#reservar {
+    padding: 1%;
+}
+
+#arribaDerecha img {
+    float: right;
+    margin: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+#arribaIzquierda img {
+    float: left;
+    margin: 1%;
+    width: 30px;
+    height: 30px;
+}
+
+#cuerpo {
+    height: 90vh;
+    clear: both;
+}
+
+header {
+    height: 5vh;
+}
+
+.idioma {
+    color: black;
+    font-size: 1.8rem;
+    float: right;
+    text-decoration: none;
+}
+
+#center {
+    clear: both;
+    float: left;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mas {
+    font-size: 1.8rem;
+}
+
+#reservar {
+    font-size: 1.5rem;
+}
+
+#equis {
+    font-size: 1.8rem;
+}
+
+ul {
+    height: 300px;
+    width: 30%;
+    margin: 0 auto;
+    list-style: none;
+    height: 500px;
+}
+
+li a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+li {
+    line-height: 2rem;
+}
+
+#abajoIdquierda {
+    float: left;
+    width: 45%;
+    text-align: left;
+    font-size: 1.5rem;
+}
+
+#abajoDerecha {
+    float: right;
+    width: 45%;
+    text-align: right;
+    font-size: 1.5rem;
+}
+
+.foot {
+    margin: 2%;
+}

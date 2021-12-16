@@ -16,8 +16,7 @@
 
             <h1>Servicios por Usuario</h1>
 
-            <form method="post" action="<?= PATH . "userServicio/update" ?>">
-                <input type="hidden" name="id" value="<?php echo $userServicio->id ?>">
+            <form method="post" action="<?= PATH . "userServicio/update/".$userServicio->user_id."/".$userServicio->servicio_id ?>">
 
                 <div class="form-group">
                     <label>Usuario</label>

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use PDO;
@@ -13,7 +14,8 @@ class UserServicio extends Model
     public function __construct()
     {
     }
-    public static function all(){ 
+    public static function all()
+    {
         //obtener conexión
         $db = UserServicio::db();
         //preparar consulta
@@ -25,16 +27,16 @@ class UserServicio extends Model
         //retornar
         return $userServicio;
     }
-    public static function find($id) 
+    public static function find($list)
     {
         $db = UserServicio::db();
-        $stmt = $db->prepare('SELECT * FROM user_servicio WHERE id=:id');
-        $stmt->execute(array(':id' => $id));
+        $stmt = $db->prepare('SELECT * FROM user_servicio WHERE user_id=:id_user and servicio_id=:id_servicio');
+        $stmt->execute(array(':id_user' => $list[0], ':id_servicio' => $list[1]));
         $stmt->setFetchMode(PDO::FETCH_CLASS, UserServicio::class);
         $userServicio = $stmt->fetch(PDO::FETCH_CLASS);
         // echo $this->birthdate->format('d-m-y');
         return $userServicio;
-    }    
+    }
     public function insert()
     {
         $db = UserServicio::db();
@@ -43,25 +45,26 @@ class UserServicio extends Model
         $stmt->bindValue(':servicio_id', $this->servicio_id);
         return $stmt->execute();
     }
-
+/**No tiene mucho sentido cambiar unas claves primarias, realmente no se si se puede */
     public function save()
     {
         $db = UserServicio::db();
-        $stmt = $db->prepare('UPDATE user_servicio SET user_id = :user_id, servicio_id = :servicio_id  WHERE id = :id');
-        $stmt->bindValue(':id', $this->id);
+        $stmt = $db->prepare('UPDATE user_servicio SET user_id = :user_id, servicio_id = :servicio_id  WHERE user_id = :user_id and servicio_id = :servicio_id');
         $stmt->bindValue(':user_id', $this->user_id);
         $stmt->bindValue(':servicio_id', $this->servicio_id);
         return $stmt->execute();
     }
-    
-    public function delete(){ 
+
+    public function delete()
+    {
         $db = UserServicio::db();
-        $stmt = $db->prepare('DELETE FROM user_servicio WHERE id = :id');
-        $stmt->bindValue(':id', $this->id);
+        $stmt = $db->prepare('DELETE FROM user_servicio WHERE user_id = :user_id and servicio_id = :servicio_id');
+        $stmt->bindValue(':user_id', $this->user_id);
+        $stmt->bindValue(':servicio_id', $this->servicio_id);
         return $stmt->execute();
     }
 
-    public function typeServicio() 
+    public function typeServicio()
     {
         // un producto pertenece a un tipo
         $db = Servicio::db();
@@ -73,7 +76,7 @@ class UserServicio extends Model
 
         return $userServicio;
     }
-    public function typeUser() 
+    public function typeUser()
     {
         // un producto pertenece a un tipo
         $db = User::db();
@@ -104,5 +107,7 @@ class UserServicio extends Model
             $this->$atributoDesconocido = $this->$atributoDesconocido();
             return $this->$atributoDesconocido;
         }
-    } 
+    }
+
+   
 }

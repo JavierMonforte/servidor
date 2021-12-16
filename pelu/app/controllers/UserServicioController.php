@@ -59,8 +59,10 @@ class UserServicioController
         // $id = (int) $args[0];
         $users = User::all();
         $servicio = Servicio::all();
-        list($id) = $args;
-        $userServicio = UserServicio::find($id);
+        $list[0] = $args[0];
+        $list[1] = $args[1];
+
+        $userServicio = UserServicio::find($list);
         // var_dump($user);
         // exit();
         require('app/views/userServicio/show.php');        
@@ -69,15 +71,14 @@ class UserServicioController
     {
         $users = User::all();
         $servicio = Servicio::all();
-        $id = (int) $arguments[0];
-        $userServicio = UserServicio::find($id);
+        $list = $arguments;
+        $userServicio = UserServicio::find($list);
         require 'app/views/userServicio/edit.php';
     }
     
-    public function update()
+    public function update($arguments)
     {
-        $id = $_REQUEST['id'];    
-        $userServicio = UserServicio::find($id);
+        $userServicio = UserServicio::find($arguments);
         $userServicio->user_id = $_REQUEST['usuario'];
         $userServicio->servicio_id = $_REQUEST['servicio'];   
         $userServicio->save();
@@ -86,8 +87,8 @@ class UserServicioController
 
     public function delete($arguments)
     {
-        $id = (int) $arguments[0];
-        $userServicio = UserServicio::find($id);
+        $list = $arguments;
+        $userServicio = UserServicio::find($list);
         $userServicio->delete();
         header('Location:'.PATH.'userServicio');
     }    

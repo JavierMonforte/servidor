@@ -28,9 +28,8 @@
 
           <td>
           
-            <a href="<?= PATH."userServicio/show/".$value->id ?>" class="btn btn-primary">Ver </a>
-            <a href="<?= PATH."userServicio/edit/".$value->id ?>" class="btn btn-primary">Editar </a>
-            <a href="<?= PATH."userServicio/delete/".$value->id ?>" class="btn btn-primary">Borrar </a>
+            <a href="<?= PATH."userServicio/show/".$value->user_id."/".$value->servicio_id ?>" class="btn btn-primary">Ver </a>
+            <a href="<?= PATH."userServicio/delete/".$value->user_id."/".$value->servicio_id ?>" class="btn btn-primary">Borrar </a>
           </td>
           </tr>
         <?php } ?>

@@ -11,7 +11,7 @@
 
   <main role="main" class="container">
     <div class="starter-template">
-      <h1>Detalle del Servicio <?php echo $tipos->id ?></h1>
+      <h1>Detalle del Tipo de Servicio <?php echo $tipos->id ?></h1>
         <ul>
             <li><strong>tipo: </strong><?php echo $tipos->tipo ?></li>
         </ul>

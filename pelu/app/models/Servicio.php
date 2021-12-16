@@ -108,4 +108,15 @@ class Servicio extends Model
             return $this->$atributoDesconocido;
         }
     } 
+    public function trabajadores()
+    {
+        $db = UserServicio::db();
+        $stmt = $db->prepare('SELECT * FROM user_servicio WHERE servicio_id = :user_id');
+        $stmt->execute(array(':user_id' => $this->idservicio));
+        $stmt->setFetchMode(PDO::FETCH_CLASS, UserServicio::class);
+        $trabajadores = $stmt->fetchAll(PDO::FETCH_CLASS, UserServicio::class);
+
+        return $trabajadores;
+    }
 }
+

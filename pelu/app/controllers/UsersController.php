@@ -2,7 +2,10 @@
 namespace App\Controllers;
 
 //require_once "app/models/User.php";
+
+use App\Models\Servicio;
 use App\Models\User;
+use App\Models\UserServicio;
 use Dompdf\Dompdf;
 
 /*
@@ -30,6 +33,7 @@ class UsersController
     public function index()
     {
         //buscar datos
+        $Servicios = Servicio::all();
         $users = User::all();
         //pasar a la vista
         require('app/views/user/index.php');
@@ -117,6 +121,7 @@ class UsersController
         // Output the generated PDF to Browser
         $dompdf->stream();        
     }
+
 }
   
 

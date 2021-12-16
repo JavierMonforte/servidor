@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <div id="general">
 <header>
     <div id="arribaIzquierda">
         <a href="/home/menu"><img src="/app/img/mas.png" alt=""></a>
@@ -27,10 +28,14 @@
 </header>
 <div class="center">
 </div>
-    <footer>
+    <div id="foot">
         <div class="foot" id="abajoIdquierda">Avda Navarra</div>
         <div class="foot" id="abajoDerecha">669604539</div>
-    </footer>
+</div>
+</div>
+<footer>
+
+</footer>
 </body>
 
 </HTML>

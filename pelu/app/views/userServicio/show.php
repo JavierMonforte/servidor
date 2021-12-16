@@ -11,7 +11,7 @@
 
   <main role="main" class="container">
     <div class="starter-template">
-      <h1>Servicios por Persona <?php echo $userServicio->id ?></h1>
+      <h1>Servicios por Persona <?php ?></h1>
       <ul>
         <li><strong>Persona: </strong><?php echo $userServicio->typeUser->nombre ?></li>
 

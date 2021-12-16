@@ -14,7 +14,7 @@
   <main role="main" class="container">
     <div class="starter-template">
 
-    <h1>Edición de Servicio</h1>
+    <h1>Edición de Tipo de Servicio</h1>
 
     <form method="post" action="<?= PATH."tipos/update"?>">
         <input type="hidden" name="id"

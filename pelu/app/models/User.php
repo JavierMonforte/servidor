@@ -96,4 +96,14 @@ class User extends Model
     {
         return password_verify($password, $user->password);
     } 
+    public function lista()
+    {
+        $db = UserServicio::db();
+        $stmt = $db->prepare('SELECT * FROM user_servicio WHERE user_id = :user_id');
+        $stmt->execute(array(':user_id' => $this->id));
+        $stmt->setFetchMode(PDO::FETCH_CLASS, UserServicio::class);
+        $userServicio = $stmt->fetchAll(PDO::FETCH_CLASS, UserServicio::class);
+
+        return $userServicio;
+    }
 }

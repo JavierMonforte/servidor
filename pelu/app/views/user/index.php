@@ -21,6 +21,7 @@
           <th>Apellidos</th>
           <th>Email</th>
           <th>F. nacimiento</th>
+          <th>Servicios</th>
           <th></th>
         </tr>
 
@@ -30,6 +31,16 @@
           <td><?php echo $user->apellido ?></td>
           <td><?php echo $user->email ?></td>
           <td><?php echo $user->fechaNacimiento ? $user->fechaNacimiento->format('d-m-Y') : 'nonato' ?></td>
+          <td><?php  
+          echo "<ul>";
+          foreach ($user->lista() as $value) {
+            echo "<li>";
+            echo $value->typeServicio->servicio;
+            echo "</li>";
+          } 
+          echo "</ul>";
+
+          ?></td>
           <td>
           
             <a href="<?= PATH."users/show/".$user->id ?>" class="btn btn-primary">Ver </a>

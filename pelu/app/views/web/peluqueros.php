@@ -4,7 +4,7 @@
 
 <body>
 
-  <?php require "app/views/parts/header.php" ?>
+  <?php require "app/views/web/header.php" ?>
 
   <main role="main" class="container">
     <div class="starter-template">
@@ -15,16 +15,26 @@
           <th>Apellidos</th>
           <th>Email</th>
           <th>F. nacimiento</th>
-          <th></th>
+          <th>Servicios</th>
         </tr>
 
         <?php foreach ($users as $key => $user) { ?>
           <tr>
-          <td><?php echo $user->nombre ?></td>
-          <td><?php echo $user->apellido ?></td>
-          <td><?php echo $user->email ?></td>
-          <td><?php echo $user->fechaNacimiento ? $user->fechaNacimiento->format('d-m-Y') : 'nonato' ?></td>
-        
+            <td><?php echo $user->nombre ?></td>
+            <td><?php echo $user->apellido ?></td>
+            <td><?php echo $user->email ?></td>
+            <td><?php echo $user->fechaNacimiento ? $user->fechaNacimiento->format('d-m-Y') : 'nonato' ?></td>
+            <td><?php
+                echo "<ul>";
+
+                foreach ($user->lista() as $key => $value) {
+                  echo "<li>";
+                  echo $value->typeServicio->servicio;
+                  echo "</li>";
+                }
+                echo "</ul>";
+
+                ?></td>
           </tr>
         <?php } ?>
       </table>

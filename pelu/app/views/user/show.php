@@ -20,7 +20,18 @@
             <li><strong>Password: </strong><?php echo $user->password ?></li>
             <li><strong>Active: </strong><?php echo $user->active ?></li>
             <li><strong>Admin: </strong><?php echo $user->admin ?></li>
+            <li><strong>Servicios</strong>
+            <?php 
+            echo "<ul>";
+            foreach ($user->lista() as $value) {
+              echo "<li>";
+              echo $value->typeServicio->servicio;
+              echo "</li>";
 
+            }
+            echo "</ul>";
+            ?>
+          </li>
           </ul>
     </div>
 
