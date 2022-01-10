@@ -14,8 +14,8 @@
 <body>
 <header>
     <div id="arribaIzquierda">
-        <a id="mas" class="idioma" href="/citas/reservar">+</a>
-        <a id="reservar" class="idioma" href="/citas/reservar">RESERVAR</a>
+        <a id="mas" class="idioma" href="/home/citas"><img src="/app/img/menu-nav-2.png" alt=""></a>
+        <a id="reservar" class="idioma" href="/home/citas">RESERVAR</a>
     </div>
     <div id="arribaDerecha">
         
@@ -27,6 +27,7 @@
     <li><a href="/home/peluqueros">PELUQUEROS</a></li>
     <li><a href="/home/servicios">SERVICIOS</a></li>
     <li><a href="/home/galeria">FOTOS</a></li>
+    <li><a href="/home/citas">CITAS</a></li>
     <li><a href="/login/index">APLICACION WEB</a></li>
     <li><a href="">ABOUT</a></li>
     <li><a href="">SOMOS SOLIDARIOS</a></li>

@@ -2,12 +2,12 @@
 <html lang="es">
 
 <head>
-  <?php require "app/views/parts/head.php" ?>
+  <?php require "app/views/parts/users.php" ?>
 </head>
 
 <body>
 
-  <?php require "app/views/parts/header.php" ?>
+  <?php require "app/views/web/header.php" ?>
 
   <main role="main" class="container">
     <div class="starter-template">

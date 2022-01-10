@@ -1,12 +1,14 @@
 <?php
+
 namespace App\Controllers;
+
 use App\Models\Servicio;
 use App\Models\User;
 use App\Models\Foto;
 
 /**
-*
-*/
+ *
+ */
 class HomeController
 {
 
@@ -16,16 +18,17 @@ class HomeController
 
     public function index()
     {
-        
-        require ("app/views/index.php");
+
+        require("app/views/index.php");
     }
     public function servicios()
     {
         require_once "app/models/Servicio.php";
         $servicios = Servicio::all();
-        require ("app/views/web/servicios.php");
+        require("app/views/web/servicios.php");
     }
-    public function menu(){
+    public function menu()
+    {
         require("app/views/web/menu.php");
     }
     public function peluqueros()
@@ -33,21 +36,27 @@ class HomeController
         require_once "app/models/User.php";
 
         $users = User::all();
-        require ("app/views/web/peluqueros.php");
+        require("app/views/web/peluqueros.php");
     }
-    public function galeria(){
+    public function galeria()
+    {
         $fotos = Foto::all();
-        require ("app/views/web/galeria.php");
- 
+        require("app/views/web/galeria.php");
     }
     public function home()
     {
         require_once "app/models/User.php";
 
         $users = User::all();
-        require ("app/views/home.php");
+        require("app/views/home.php");
     }
-    public function login(){
+    public function citas()
+    {
+        require("app/views/web/citas.php");
+    }
+
+    public function login()
+    {
         require("app/views/login.php");
     }
     public function logout()
@@ -57,5 +66,4 @@ class HomeController
         session_destroy();
         require "app/views/web/menu.php";
     }
-
 }

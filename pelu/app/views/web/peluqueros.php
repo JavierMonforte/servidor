@@ -1,5 +1,5 @@
 <head>
-  <?php require "app/views/parts/head.php" ?>
+  <?php require "app/views/parts/users.php" ?>
 </head>
 
 <body>
@@ -8,7 +8,7 @@
 
   <main role="main" class="container">
     <div class="starter-template">
-      <h1>Lista de usuarios</h1>
+      <h1>Nuestro Personal</h1>
       <table class="table table-striped table-hover">
         <tr>
           <th>Nombre</th>

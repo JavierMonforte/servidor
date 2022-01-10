@@ -16,8 +16,8 @@
     <div id="general">
 <header>
     <div id="arribaIzquierda">
-        <a href="/home/menu"><img src="/app/img/mas.png" alt=""></a>
-        <a href="/home/menu" id="reservar" class="idioma">RESERVAR</a>
+        <a href="/home/citas"><img src="/app/img/mas.png" alt=""></a>
+        <a href="/home/citas" id="reservar" class="idioma">RESERVAR</a>
     </div>
     <div id="arribaDerecha">
         

@@ -1,0 +1,65 @@
+header {
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+}
+
+#arribaIzquierda {
+    position: fixed;
+    float: left;
+    width: 48%;
+    height: 4vh;
+}
+
+#arribaDerecha {
+    float: right;
+    right: 2%;
+    height: 7vh;
+    color: black;
+    font-size: 2.3rem;
+    position: fixed;
+}
+
+#arribaDerecha a {
+    text-decoration: none;
+    color: black;
+}
+
+#arribaIzquierda a {
+    float: left;
+    margin: 2%;
+    text-decoration: none;
+    color: white;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 15%;
+}
+
+#reservar {
+    padding: 1%;
+    width: 25%;
+    height: 2.3rem;
+    background-color: #292929;
+}
+
+#arribaDerecha img {
+    float: right;
+    margin: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+#arribaIzquierda img {
+    float: left;
+    margin: 1%;
+    width: 30px;
+    height: 30px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.starter-template {
+    padding-top: 7vh;
+}
