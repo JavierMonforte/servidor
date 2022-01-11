@@ -1,0 +1,15 @@
+{
+    "name": "alumno/clase01",
+    "autoload": {
+        "psr-4": {
+            "Alumno\\Clase01\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "JavierMonforte",
+            "email": "jmonforte@fuentesana.es"
+        }
+    ],
+    "require": {}
+}
