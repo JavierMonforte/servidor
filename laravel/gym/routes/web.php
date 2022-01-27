@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MemberController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ActivityController;
 
 /*
@@ -18,14 +18,14 @@ use App\Http\Controllers\ActivityController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource ('members', MemberController::class);
-// Route::get('members', [MemberController::class, 'index']);
-// Route::get('members/create', [MemberController::class, 'create']);
-// Route::get('members/{id}', [MemberController::class, 'show']);
-// Route::post('members', [MemberController::class, 'store']);
-// Route::get('members/{id}/edit', [MemberController::class, 'edit']);
-// Route::put('members/{id}', [MemberController::class, 'update']);
-// Route::delete('members/{id}', [MemberController::class, 'destroy']);
+Route::resource ('users', UserController::class);
+// Route::get('users', [UserController::class, 'index']);
+// Route::get('users/create', [UserController::class, 'create']);
+// Route::get('users/{id}', [UserController::class, 'show']);
+// Route::post('users', [UserController::class, 'store']);
+// Route::get('users/{id}/edit', [UserController::class, 'edit']);
+// Route::put('users/{id}', [UserController::class, 'update']);
+// Route::delete('users/{id}', [UserController::class, 'destroy']);
 
 //rutas -> plural
 //tablas -> plural
@@ -42,3 +42,7 @@ Route::resource ('activities', ActivityController::class);
 //rutas -> plural
 //tablas -> plural
 //controladores y modelos -> singular
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

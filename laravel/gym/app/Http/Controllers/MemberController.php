@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Member;
 use Illuminate\Http\Request;
 
 class MemberController extends Controller
@@ -13,7 +13,8 @@ class MemberController extends Controller
      */
     public function index()
     {
-        return "has entrado en index";
+        $members = Member::all();
+        return view('members.index', ['members' => $members]);
         //
     }
 
@@ -47,9 +48,9 @@ class MemberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Member $member)
     {
-        return "has entrado en show";
+        return view('members.show', ['member' => $member]);
         //
     }
 

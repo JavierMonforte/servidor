@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../dwes"
+		},
+		{
+			"path": "../../../.."
+		},
+		{
+			"path": "../../../../../entorno"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}
