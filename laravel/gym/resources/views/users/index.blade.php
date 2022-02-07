@@ -20,7 +20,7 @@
     <th>Sexo</th>
 
 </tr>
-@forelse ($members as $member)
+@forelse ($users as $member)
 <tr>
     <td>{{$member->dni}} </td>
     <td>{{$member->nombre}} </td>
@@ -29,7 +29,7 @@
     <td>{{$member->fechaNacimiento}} </td>
     <td>{{$member->sexo}} </td>
 
-    <td> <a href="/members/{{$member->id}}">Ver</a></td>
+    <td> <a href="/users/{{$member->id}}">Ver</a></td>
 </tr>
 @empty
 <tr>

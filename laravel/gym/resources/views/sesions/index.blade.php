@@ -6,7 +6,7 @@
         <div class="col-md-8">
 
 
-        <h1>Lista de actividades
+        <h1>Lista de Sesiones
             <a href="/sesions/create" class="btn btn-primary float-right">
                 Nuevo
             </a>
@@ -38,6 +38,7 @@
         </tr>
         @endforelse
         </table>
+        {{$sesions->links("pagination::bootstrap-4")}}
 
 
 

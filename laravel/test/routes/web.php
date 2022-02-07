@@ -15,10 +15,13 @@ use App\Http\Controllers\StudyController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('studies/filter', [StudyController::class, 'filter']);
+
 //Route::get('saludo/{name}', [controllerPrueba::class, 'saludo']);
 //Route::get('hola', [controllerPrueba::class, 'hola']);
 Route::resource('studies', StudyController::class);
@@ -37,7 +40,5 @@ Route::resource('users', UserController::class);
 // Route::get('users/{id}/edit', [UserController::class, 'edit']);
 // Route::put('users/{id}', [UserController::class, 'update']);
 // Route::delete('users/{id}', [UserController::class, 'destroy']);
-
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
