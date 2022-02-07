@@ -7,7 +7,7 @@
 
 
         <h1>Lista de estudios
-            <a href="/studies/create" class="btn btn-primary float-right">
+            <a href="/users/create" class="btn btn-primary float-right">
                 Nuevo
             </a>
         </h1>
@@ -15,17 +15,17 @@
 
         <table class="table table-striped">
         <tr>
-            <th>Código</th>
             <th>Nombre</th>
-            <th>Abreviatura</th>
+            <th>Email</th>
+            <th>Password</th>
         </tr>
-        @forelse ($studies as $study)
+        @forelse ($users as $user)
         <tr>
-            <td>{{$study->code}} </td>
-            <td>{{$study->name}} </td>
-            <td>{{$study->abreviation}} </td>
-            <td> <a class="btn btn-primary btn-sm" href="/studies/{{$study->id}}">Ver</a></td>
-            <td> <a class="btn btn-primary btn-sm" href="/studies/{{$study->id}}/edit">Editar</a></td>
+            <td>{{$user->name}} </td>
+            <td>{{$user->email}} </td>
+            <td>{{$user->password}} </td>
+            <td> <a class="btn btn-primary btn-sm" href="/users/{{$user->id}}">Ver</a></td>
+            <td> <a class="btn btn-primary btn-sm" href="/users/{{$user->id}}/edit">Editar</a></td>
         </tr>
         @empty
         <tr>

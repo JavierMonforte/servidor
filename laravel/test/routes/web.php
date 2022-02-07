@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\controllerPrueba;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudyController;
 
@@ -28,6 +29,15 @@ Route::resource('studies', StudyController::class);
 // Route::get('studies/{id}/edit', [StudyController::class, 'edit']);
 // Route::put('studies/{id}', [StudyController::class, 'update']);
 // Route::delete('studies/{id}', [StudyController::class, 'destroy']);
+Route::resource('users', UserController::class);
+// Route::get('users', [UserController::class, 'index']);
+// Route::get('users/create', [UserController::class, 'create']);
+// Route::get('users/{id}', [UserController::class, 'show']);
+// Route::post('users', [UserController::class, 'store']);
+// Route::get('users/{id}/edit', [UserController::class, 'edit']);
+// Route::put('users/{id}', [UserController::class, 'update']);
+// Route::delete('users/{id}', [UserController::class, 'destroy']);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -14,4 +14,7 @@ class Activity extends Model
         'duracion',
         'participantes'
     ];
+    public function sesions() {
+        return $this->hasMany(Sesion::class);
+}
 }

@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\SesionController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -39,10 +41,20 @@ Route::resource ('activities', ActivityController::class);
 // Route::put('activities/{id}', [ActivityController::class, 'update']);
 // Route::delete('activities/{id}', [ActivityController::class, 'destroy']);
 
+Route::resource ('sesions', SesionController::class);
+// Route::get('sesions', [ActivityController::class, 'index']);
+// Route::get('sesions/create', [ActivityController::class, 'create']);
+// Route::get('sesions/{id}', [ActivityController::class, 'show']);
+// Route::post('sesions', [ActivityController::class, 'store']);
+// Route::get('sesions/{id}/edit', [ActivityController::class, 'edit']);
+// Route::put('sesions/{id}', [ActivityController::class, 'update']);
+// Route::delete('sesions/{id}', [ActivityController::class, 'destroy']);
 //rutas -> plural
 //tablas -> plural
 //controladores y modelos -> singular
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/search', [App\Http\Controllers\SesionController::class, 'search'])->name('search');
+//Route::get('/sesions/createAll', [App\Http\Controllers\SesionController::class, 'createAll']);
+//Route::post('/storeAll', [App\Http\Controllers\SesionController::class, 'storeAll']);
