@@ -11,7 +11,10 @@ class Study extends Model
     
 
     //Si no esta aqui no me dejara cambiarlo;
-    protected $fillable = ['code','name','abreviacion'];
+    protected $fillable = [
+        'code',
+        'name',
+        'abreviation'];
     public function __toString()
     {
         return "" . $this->id;

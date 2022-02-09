@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Estudion nº {{$study}}</h1>
+    <h1>Estudio nº {{$study}}</h1>
 
 
     <ul>

@@ -20,6 +20,10 @@ use App\Http\Controllers\SesionController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/search', [App\Http\Controllers\SesionController::class, 'search'])->name('search');
+Route::get('/reservas', [SesionController::class, 'SolicitarReservas']);
+Route::get('/reservas/filter', [SesionController::class, 'filter']);
+
 Route::resource ('users', UserController::class);
 // Route::get('users', [UserController::class, 'index']);
 // Route::get('users/create', [UserController::class, 'create']);
@@ -55,6 +59,5 @@ Route::resource ('sesions', SesionController::class);
 
 Auth::routes();
 
-Route::get('/search', [App\Http\Controllers\SesionController::class, 'search'])->name('search');
 //Route::get('/sesions/createAll', [App\Http\Controllers\SesionController::class, 'createAll']);
 //Route::post('/storeAll', [App\Http\Controllers\SesionController::class, 'storeAll']);

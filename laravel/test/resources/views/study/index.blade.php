@@ -18,6 +18,9 @@
                     <th>Código</th>
                     <th>Nombre</th>
                     <th>Abreviatura</th>
+                    <th>Ver</th>
+                    <th>Editar</th>
+
                 </tr>
                 @forelse ($studies as $study)
                 <tr>

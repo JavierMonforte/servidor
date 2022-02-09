@@ -31,8 +31,7 @@
         <li>
             <ul>
                 @foreach ($activity->sesions as $sesion)
-                <li>{{$sesion->inicio}}</li>
-                <li>{{$sesion->fin}}</li>
+                <li>{{$sesion->inicio}} - {{$sesion->fin}}</li>
 
                 @endforeach
             </ul>

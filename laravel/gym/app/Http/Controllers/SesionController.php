@@ -132,6 +132,18 @@ class SesionController extends Controller
     }
 
 
+    public function solicitarReservas(){
+        //$activities = Activity::with('sesion.monitor')->get();
+        $activities = Activity::all();
+        return view('reservas',['activities' => $activities]);
+    }
+    public function filter(Request $request){
+        //$activities = Activity::with('sesion.monitor')->get();
+        $id = $request->id;
+        $activity = Activity::find($id);
+        $sesions = $activity->sesions;
+        return $sesions;
+    }
     public function destroy(Sesion $sesion)
     {
         //
