@@ -18,7 +18,7 @@ class SesionController extends Controller
      */
     public function index()
     {
-       // $sesions = Sesion::all();
+        // $sesions = Sesion::all();
         $sesions = Sesion::paginate(5);
 
         return view('sesions.index', ['sesions' => $sesions]);
@@ -32,7 +32,7 @@ class SesionController extends Controller
     public function create()
     {
         $activities = Activity::all();
-        return view('sesions.createAll',['activities' => $activities]);
+        return view('sesions.createAll', ['activities' => $activities]);
     }
     public function createAll()
     {
@@ -56,7 +56,7 @@ class SesionController extends Controller
             $horaInicio = Carbon::create($fecha->year, $fecha->month, $i, $horaInicio->hour, $horaInicio->minute, $horaInicio->second);
             $horaFin = Carbon::create($fecha->year, $fecha->month, $i, $horaFin->hour, $horaFin->minute, $horaFin->second);
 
-           if (in_array($horaInicio->englishDayOfWeek, $request->dias)) {
+            if (in_array($horaInicio->englishDayOfWeek, $request->dias)) {
 
                 $sesion = new Sesion;
                 $sesion->inicio = $horaInicio->format('Y-m-d h:i:s');
@@ -118,30 +118,37 @@ class SesionController extends Controller
      * @param  \App\Models\Sesion  $sesion
      * @return \Illuminate\Http\Response
      */
-    public function sign(User $user, Sesion $sesion){
-        
+    public function sign(User $user, Sesion $sesion)
+    {
+
         $sesion->addUser($user);
         // $users = User::all();
         // return view('user.index' , ['users'=> $users]);
     }
 
-    public function search(){
+    public function search()
+    {
         $activities = Activity::all();
-        return view('sesions.searchSesion' , ['activities'=> $activities]);
-
+        return view('sesions.searchSesion', ['activities' => $activities]);
     }
 
 
-    public function solicitarReservas(){
+    public function solicitarReservas()
+    {
         //$activities = Activity::with('sesion.monitor')->get();
         $activities = Activity::all();
-        return view('reservas',['activities' => $activities]);
+        return view('reservas', ['activities' => $activities]);
     }
-    public function filter(Request $request){
+    public function filter(Request $request)
+    {
         //$activities = Activity::with('sesion.monitor')->get();
         $id = $request->id;
+        $mes = $request->mes;
         $activity = Activity::find($id);
-        $sesions = $activity->sesions;
+        //$sesions = Sesion::where("activity_id‟,{{$activity->id}})->orderBy("inicio‟,‟asc‟)->get();
+        $sesions = $activity->sesionesMes($mes);
+
+        //$sesions = $activity->sesions;
         return $sesions;
     }
     public function destroy(Sesion $sesion)
