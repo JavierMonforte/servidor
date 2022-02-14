@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-        <h1>Actualización de estudios</h1>
+        <h1>Actualización de Sesion Id =  {{$sesion->id}}</h1>
 
         <form action="/sesions/{{$sesion->id}}" method="post">
         @csrf
@@ -20,7 +20,7 @@
         </div>
 
         <div>
-        <label for="fin">Inicio</label>
+        <label for="fin">Fin</label>
             <input type="datetime-local" name="fin" value="{{$sesion->fin}}">  
         </div>
        

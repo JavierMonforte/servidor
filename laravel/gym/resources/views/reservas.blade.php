@@ -5,13 +5,14 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
 
-
             <h1>RESERVA TU SESION
                 <!--<a href="/activities/create" class="btn btn-primary float-right">
                     Nuevo
                 </a>-->
             </h1>
             <form action="" id="formulario" class="col-md-08">
+            @csrf
+                <input type="hidden" value="{{token_val}}">
                 <select id='actividad' name="id" class="col-md-8">
                     <option value="">Seleccione actividad</option>
 

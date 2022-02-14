@@ -2,6 +2,15 @@
 
 @section('content')
 <div class="container">
+    <div class="row">
+    <ul>
+    <li><a class="btn btn-primary btn-sm" href="/users">Usuarios</a></li>
+    <li><a class="btn btn-primary btn-sm" href="/activities">Usuarios</a></li>
+    <li><a class="btn btn-primary btn-sm" href="/sesions">Usuarios</a></li>
+    <li><a class="btn btn-primary btn-sm" href="/roles">Usuarios</a></li>
+
+                    </ul>
+    </div>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -15,6 +24,7 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                   
                 </div>
             </div>
         </div>

@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Sesion;
 use App\Models\Activities;
-
+use App\Models\User;
+use Auth;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Models\Activity;
@@ -118,12 +119,18 @@ class SesionController extends Controller
      * @param  \App\Models\Sesion  $sesion
      * @return \Illuminate\Http\Response
      */
-    public function sign(User $user, Sesion $sesion)
+    public function sign(Request $request)
     {
+        $user = Auth::user();
 
+        $id = $request->id;
+        $sesion = Sesion::find($id);
         $sesion->addUser($user);
+        $activities = Activity::all();
         // $users = User::all();
         // return view('user.index' , ['users'=> $users]);
+        return view('reservas', ['activities' => $activities]);
+
     }
 
     public function search()
@@ -150,6 +157,16 @@ class SesionController extends Controller
 
         //$sesions = $activity->sesions;
         return $sesions;
+    }
+    public function inscribir(Request $request)
+    {
+        $user = Auth::user();
+        $id = $request->id;
+        $sesion = Sesion::find($id);
+        sign($user,$sesion);
+        //$activities = Activity::with('sesion.monitor')->get();
+
+        //$sesions = $activity->sesions;
     }
     public function destroy(Sesion $sesion)
     {

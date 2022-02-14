@@ -6,7 +6,7 @@
         <div class="col-md-8">
 
 
-        <h1>Lista de estudios
+        <h1>Lista de Usuarios
             <a href="/users/create" class="btn btn-primary float-right">
                 Nuevo
             </a>
@@ -36,7 +36,7 @@
 
 
 
-
+        <h4>El usuario Registrado es {{$user->name}}</h4>
 
         </div>
     </div>

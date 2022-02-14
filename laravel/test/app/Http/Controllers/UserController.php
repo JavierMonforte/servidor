@@ -1,22 +1,31 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\User;
 use App\Models\Role;
-
+use Auth;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-/**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
-    $users= User::all();
-    return view('user.index', ['users' => $users]);// Variables con corchetes
+        $user = Auth::user();
+        $users = User::all();
+        return view('user.index', [
+            'users' => $users,
+            'user' => $user
+        ]); // Variables con corchetes
     }
 
     /**
@@ -86,13 +95,13 @@ class UserController extends Controller
         // $study->code = $request->code;
         // $study->name = $request->name;
         // $study->abreviation = $request->abreviation;
-        
+
         //version corta
         $user->fill($request->all());
 
         $user->save();
         return redirect('/user');
-        }
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -100,7 +109,8 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function addRole(Request $request){
+    public function addRole(Request $request)
+    {
         $user = User::find(1);
         $role = Role::find(1);
         $user->addRole($role);

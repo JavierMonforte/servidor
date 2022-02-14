@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\SesionController;
 
 
@@ -20,11 +21,13 @@ use App\Http\Controllers\SesionController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/search', [App\Http\Controllers\SesionController::class, 'search'])->name('search');
-Route::get('/reservas', [SesionController::class, 'SolicitarReservas']);
-Route::get('/reservas/filter', [SesionController::class, 'filter']);
+Route::post('/reservas/sign', [SesionController::class, 'sign']);
+Route::get('/search', [App\Http\Controllers\SesionController::class, 'search'])->name('search')->middleware('auth');
+Route::get('/reservas', [SesionController::class, 'SolicitarReservas'])->middleware('auth');
+Route::get('/reservas/filter', [SesionController::class, 'filter'])->middleware('auth');
+Route::get('/auth/login', [LoginController::class, 'login']);
 
-Route::resource ('users', UserController::class);
+Route::resource ('users', UserController::class)->middleware('auth');;
 // Route::get('users', [UserController::class, 'index']);
 // Route::get('users/create', [UserController::class, 'create']);
 // Route::get('users/{id}', [UserController::class, 'show']);
@@ -36,7 +39,7 @@ Route::resource ('users', UserController::class);
 //rutas -> plural
 //tablas -> plural
 //controladores y modelos -> singular
-Route::resource ('activities', ActivityController::class);
+Route::resource ('activities', ActivityController::class)->middleware('auth');;
 // Route::get('activities', [ActivityController::class, 'index']);
 // Route::get('activities/create', [ActivityController::class, 'create']);
 // Route::get('activities/{id}', [ActivityController::class, 'show']);
@@ -45,7 +48,7 @@ Route::resource ('activities', ActivityController::class);
 // Route::put('activities/{id}', [ActivityController::class, 'update']);
 // Route::delete('activities/{id}', [ActivityController::class, 'destroy']);
 
-Route::resource ('sesions', SesionController::class);
+Route::resource ('sesions', SesionController::class)->middleware('auth');
 // Route::get('sesions', [ActivityController::class, 'index']);
 // Route::get('sesions/create', [ActivityController::class, 'create']);
 // Route::get('sesions/{id}', [ActivityController::class, 'show']);
@@ -61,3 +64,4 @@ Auth::routes();
 
 //Route::get('/sesions/createAll', [App\Http\Controllers\SesionController::class, 'createAll']);
 //Route::post('/storeAll', [App\Http\Controllers\SesionController::class, 'storeAll']);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');

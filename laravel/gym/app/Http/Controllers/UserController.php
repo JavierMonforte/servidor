@@ -1,11 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\User;
+use App\Models\Role;
 use Illuminate\Http\Request;
+use Auth;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+       // $this->middleware('role')->except('show'); //todos excepto ...
+    }
     /**
      * Display a listing of the resource.
      *
@@ -22,8 +29,9 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {   
+        $roles = Role::all();
+        return view('users.create',['roles' => $roles]);
     }
 
     /**
@@ -34,8 +42,8 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $users = User::create($request->all());
+        return redirect(('/users'));    }
 
     /**
      * Display the specified resource.
@@ -43,9 +51,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        return view('users.show', ['user' => $user]);
     }
 
     /**
@@ -54,9 +62,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        return view('users.edit', ['user' => $user]);
     }
 
     /**
@@ -66,10 +74,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
-    }
+        $user->fill($request->all());
+
+        $user->save();
+        return redirect('/users');     }
 
     /**
      * Remove the specified resource from storage.
@@ -77,7 +87,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
         //
     }

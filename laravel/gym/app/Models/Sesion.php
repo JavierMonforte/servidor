@@ -9,6 +9,7 @@ class Sesion extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'id',
         'inicio',
         'fin',
         'activity_id'

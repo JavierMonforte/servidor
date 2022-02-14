@@ -15,16 +15,20 @@ use App\Http\Controllers\StudyController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Auth::routes();
 
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('prueba', function () {
+    return "Has accedido correctamente a esta ruta";
+})->middleware(('role'));
 Route::get('studies/filter', [StudyController::class, 'filter']);
 
 //Route::get('saludo/{name}', [controllerPrueba::class, 'saludo']);
 //Route::get('hola', [controllerPrueba::class, 'hola']);
-Route::resource('studies', StudyController::class);
+Route::resource('studies', StudyController::class)->middleware('auth');
 // Route::get('studies', [StudyController::class, 'index']);
 // Route::get('studies/create', [StudyController::class, 'create']);
 // Route::get('studies/{id}', [StudyController::class, 'show']);

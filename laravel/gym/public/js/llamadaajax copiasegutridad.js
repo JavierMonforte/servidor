@@ -1,9 +1,21 @@
+console.log("enlazado");
+
 $('#formulario').click(function(e) {
     e.preventDefault();
+    console.log("ha hecho click");
     data = $('#actividad').val();
     mes = $('#mes').val();
+    console.log(mes);
+    console.log(data);
 
+    /* $.get("/reservas/filter?id=" + data, function(data, status) {
+         // console.log("Data: " + data + "\nStatus: " + status);
+         console.log(data);
 
+         crearTabla(data);
+
+         //$('#destinofiltro').html(data);
+     });*/
     $.ajax({
             method: "GET",
             url: "/reservas/filter",
@@ -13,7 +25,8 @@ $('#formulario').click(function(e) {
         .done(function(data) {
             crearTabla2(data);
         }).fail(function() {
-            $("#destinofiltro").html("<p>Se ha producido un error</p>")
+            $("#destinofiltro").html("");
+            $("#destinofiltro").append("<p>Se ha producido un error</p>");
         })
 
 })
@@ -37,14 +50,14 @@ function crearTabla2(data) {
             var inicio = elementos[index].inicio;
             var fin = elementos[index].fin;
             var id = elementos[index].id;
-            var enlace = "<button class='btn btn-primary btn-sm' id='R" + index + "' value ='" + id + "'> Reservar </button>";
-            var fecha = crearFecha(inicio);
-            $("#destinofiltro").find("tr").eq(i).append("<td><input type=datetime Sreadonly value='" + fecha + "'></td>");
-            $("#destinofiltro").find("tr").eq(i).append("<td><input type=datetime readonly value='" + crearFecha(fin) + "'></td>");
+            var enlace = "<button class = 'btn btn-primary btn-sm' value ='" + id + '"> Reservar </button>';
+
+            $("#destinofiltro").find("tr").eq(i).append("<td>" + inicio + "</td>");
+            $("#destinofiltro").find("tr").eq(i).append("<td>" + fin + "</td>");
             $("#destinofiltro").find("tr").eq(i).append("<td>" + enlace + "</td>");
+            $("button").on("click", mandarPost());
 
         }
-        $("#destinofiltro").find("button").on("click", mandarPost);
 
 
     } else {
@@ -55,35 +68,5 @@ function crearTabla2(data) {
 }
 
 function mandarPost() {
-    var idt = $(this).val();
-    $.ajax({
-            method: "POST",
-            url: "/reservas/sign/",
-            data: {
-                id: idt
-            }
-
-        })
-        .done(function(data) {
-            alert("Se ha inscrito en la Sesion " + idt);
-        }).fail(function() {
-
-        })
+    alert($(this).val());
 }
-
-function crearFecha(texto) {
-    var fechahora = texto.split(" ");
-    var fecha = fechahora[0].split("-");
-    var anio = fecha[0];
-    var mes = fecha[1] - 1;
-    var dia = fecha[2];
-    var horas = fechahora[1].split(":");
-    var hora = horas[0];
-    var minutos = horas[1];
-    var segundos = horas[2];
-    fechaFinal = new Date(anio, mes, dia, hora, minutos, segundos);
-    return fechaFinal;
-}
-/*$("#meses").change(function () {
-    var valor = $("#meses option:selected").val();
-})*/
