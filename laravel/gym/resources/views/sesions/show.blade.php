@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Actividad nº {{$sesion->id}}</h1>
+    <h1>Sesion nº {{$sesion->id}}</h1>
 
 
     <ul>
@@ -21,6 +21,9 @@
         <li>
             <strong>Actividad</strong>
             {{ $sesion->activity->name }}
+        </li>
+        <li>
+            Numero de inscritos en la sesion
         </li>
     </ul>
 </body>

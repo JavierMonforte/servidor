@@ -22,7 +22,7 @@ class CheckRole
         if(Auth::check() && Auth::user()->role->id == 3){
             return $next($request);
         } else {
-            return redirect("/".Auth::user()->role->id);
+            return redirect("/auth/login");
         }
     }
 }

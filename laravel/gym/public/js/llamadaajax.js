@@ -58,8 +58,9 @@ function mandarPost() {
     var idt = $(this).val();
     $.ajax({
             method: "POST",
-            url: "/reservas/sign/",
+            url: "/reservas/sign",
             data: {
+                _token: $('#token').val(),
                 id: idt
             }
 

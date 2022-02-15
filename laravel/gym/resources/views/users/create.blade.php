@@ -1,18 +1,22 @@
+@extends('layouts.app')
+
+@section('content')
 <div class="container">
     <div class="col-md-8">
         <h1>Creacion de Socios</h1>
-        <form action="users" method="post">
+        <form action="/users" method="post">
+        @csrf
 
-            <div>
-                <label for="code">Código</label>
-                <input type="text" name="code">
+           <div>
+                <label for="dni">DNI</label>
+                <input type="text" name="dni">
             </div>
             <div>
                 <label for="name">Nombre</label>
                 <input type="text" name="name">
             </div>
             <div>
-                <label for="name">email</label>
+                <label for="email">email</label>
                 <input type="text" name="email">
             </div>
             <div>
@@ -21,15 +25,15 @@
             </div>
             <div>
                 <label for="peso">Peso</label>
-                <input type="number" name="peso">
+                <input type="text" name="peso">
             </div>
             <div>
                 <label for="altura">Altura</label>
-                <input type="number" name="altura">
+                <input type="text" name="altura">
             </div>
             <div>
                 <label for="fechaNacimiento">Fecha Nacimiento</label>
-                <input type="datetime-local" name="fechaNacimiento">
+                <input type="date" name="fechaNacimiento">
             </div>
             <div>
                 <label for="sexo">Genero</label>
@@ -51,3 +55,4 @@
     </div>
 
 </div>
+@endsection

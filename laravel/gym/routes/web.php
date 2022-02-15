@@ -27,14 +27,14 @@ Route::get('/reservas', [SesionController::class, 'SolicitarReservas'])->middlew
 Route::get('/reservas/filter', [SesionController::class, 'filter'])->middleware('auth');
 Route::get('/auth/login', [LoginController::class, 'login']);
 
-Route::resource ('users', UserController::class)->middleware('auth');;
-// Route::get('users', [UserController::class, 'index']);
-// Route::get('users/create', [UserController::class, 'create']);
-// Route::get('users/{id}', [UserController::class, 'show']);
-// Route::post('users', [UserController::class, 'store']);
-// Route::get('users/{id}/edit', [UserController::class, 'edit']);
-// Route::put('users/{id}', [UserController::class, 'update']);
-// Route::delete('users/{id}', [UserController::class, 'destroy']);
+//Route::resource ('users', UserController::class)->middleware('auth');;
+Route::get('users', [UserController::class, 'index'])->middleware('role');
+Route::get('users/create', [UserController::class, 'create'])->middleware('role');
+Route::get('users/{id}', [UserController::class, 'show']);
+Route::post('users', [UserController::class, 'store'])->middleware('auth');
+Route::get('users/{id}/edit', [UserController::class, 'edit']);
+Route::put('users/{id}', [UserController::class, 'update']);
+Route::delete('users/{id}', [UserController::class, 'destroy'])->middleware('auth');
 
 //rutas -> plural
 //tablas -> plural

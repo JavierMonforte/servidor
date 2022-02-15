@@ -12,7 +12,7 @@
             </h1>
             <form action="" id="formulario" class="col-md-08">
             @csrf
-                <input type="hidden" value="{{token_val}}">
+            <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                 <select id='actividad' name="id" class="col-md-8">
                     <option value="">Seleccione actividad</option>
 

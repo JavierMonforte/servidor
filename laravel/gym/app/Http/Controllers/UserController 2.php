@@ -44,10 +44,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $request->password = Hash::make($request->password);
         $user = User::create($request->all());
-        $user->password = Hash::make($request->password);
-        $user->save();
         return redirect(('/users'));  
       }
 
@@ -87,11 +84,9 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $user->fill($request->all());
-        $user->password = Hash::make($request->password);
 
         $user->save();
-        return redirect('/users');     
-    }
+        return redirect('/users');     }
 
     /**
      * Remove the specified resource from storage.
