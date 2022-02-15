@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Study;
 use Illuminate\Http\Request;
 
@@ -13,8 +14,11 @@ class StudyController extends Controller
      */
     public function index()
     {
-    $studies= Study::all();
-    return view('study.index', ['studies' => $studies]);// Variables con corchetes
+        $studies = Study::all();
+
+        return view('study.index', ['studies' => $studies]);
+        dd($studies);
+        return $studies;
     }
 
     /**
@@ -52,13 +56,15 @@ class StudyController extends Controller
         // $study->save();
 
         // header('Location .....');
-        return redirect(('/studies'));
+        return redirect('/studies');
+
+        // INSERT INTO studies('code', 'name', 'abreviation')
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Study  $study
      * @return \Illuminate\Http\Response
      */
     public function show(Study $study)
@@ -69,7 +75,7 @@ class StudyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Study  $study
      * @return \Illuminate\Http\Response
      */
     public function edit(Study $study)
@@ -81,7 +87,7 @@ class StudyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Study  $study
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Study $study)
@@ -102,18 +108,19 @@ class StudyController extends Controller
 
         $study->save();
         return redirect('/studies');
-        }
+    }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Study  $study
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Study $study)
     {
         //
     }
+
     public function filter(Request $request)
     {
         $filter = $request->filter;
@@ -121,10 +128,10 @@ class StudyController extends Controller
         $studies = Study::where('name', 'LIKE', "%$filter%")->get();
 
         //así devolvemos JSON
-        return $studies;
+        // return $studies;
 
         //pero así html (más simple en el cliente y menos limpio)
         //pero interesante que lo conozcan los alumnos 
-        //return view('study.ajax.filter', ['studies'=>$studies]);
+        return view('study.ajax.filter', ['studies'=>$studies]);
     }
 }
