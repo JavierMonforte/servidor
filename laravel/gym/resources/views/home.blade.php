@@ -37,7 +37,8 @@
                             </ul>
                         </li>
                         <li><a href="/roles">Roles</a></li>
-                        <li><a href="/reservas">Reservas</a></li>
+                        <li><a href="/reservas">Reservas por actividad y mes</a></li>
+                        <li><a href="/reservas/dias">Reservas por dias</a></li>
                         <li><a href="/auth/login">Login</a></li>
 
 

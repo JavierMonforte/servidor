@@ -22,9 +22,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::post('/reservas/sign', [SesionController::class, 'sign']);
+Route::post('/reservas/signDias', [SesionController::class, 'signDias']);
+
 Route::get('/search', [App\Http\Controllers\SesionController::class, 'search'])->name('search')->middleware('auth');
 Route::get('/reservas', [SesionController::class, 'SolicitarReservas'])->middleware('auth');
+Route::get('/reservas/dias', [SesionController::class, 'reservasDia'])->middleware('auth');
 Route::get('/reservas/filter', [SesionController::class, 'filter'])->middleware('auth');
+Route::get('/reservas/dias/filter', [SesionController::class, 'filter2'])->middleware('auth');
+
 Route::get('/auth/login', [LoginController::class, 'login']);
 
 //Route::resource ('users', UserController::class)->middleware('auth');;

@@ -129,10 +129,22 @@ class SesionController extends Controller
         $activities = Activity::all();
         // $users = User::all();
         // return view('user.index' , ['users'=> $users]);
-        return view('reservas', ['activities' => $activities]);
+        return view('reservas.reservas', ['activities' => $activities]);
 
     }
+    public function signDias(Request $request)
+    {
+        $user = Auth::user();
 
+        $id = $request->id;
+        $sesion = Sesion::find($id);
+        $sesion->addUser($user);
+        $activities = Activity::all();
+        // $users = User::all();
+        // return view('user.index' , ['users'=> $users]);
+        return view('reservas.reservasDia', ['activities' => $activities]);
+
+    }
     public function search()
     {
         $activities = Activity::all();
@@ -144,7 +156,13 @@ class SesionController extends Controller
     {
         //$activities = Activity::with('sesion.monitor')->get();
         $activities = Activity::all();
-        return view('reservas', ['activities' => $activities]);
+        return view('reservas.reservas', ['activities' => $activities]);
+    }
+    public function reservasDia()
+    {
+        //$activities = Activity::with('sesion.monitor')->get();
+        $activities = Activity::all();
+        return view('reservas.reservasDia', ['activities' => $activities]);
     }
     public function filter(Request $request)
     {
@@ -154,6 +172,16 @@ class SesionController extends Controller
         $activity = Activity::find($id);
         //$sesions = Sesion::where("activity_id‟,{{$activity->id}})->orderBy("inicio‟,‟asc‟)->get();
         $sesions = $activity->sesionesMes($mes);
+
+        //$sesions = $activity->sesions;
+        return $sesions;
+    }
+    public function filter2(Request $request)
+    {
+        //$activities = Activity::with('sesion.monitor')->get();
+        $fecha = $request->fecha;
+        //$activity = Activity::find($id);
+        $sesions = Sesion::where('inicio', 'LIKE', "%$fecha%")->get();
 
         //$sesions = $activity->sesions;
         return $sesions;
