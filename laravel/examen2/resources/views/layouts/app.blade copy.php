@@ -12,14 +12,16 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js')}}"></script>
-   <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script> 
---><!-- Fonts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script> <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
     <!-- Styles -->
-   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">-->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!--<link href="{{ asset('css/app.css') }}" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="/resources/css/bootstrap.min.css">-->
 
 </head>
 
@@ -31,49 +33,6 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-                @if(Auth::check())
-                <div class="dropdown">
-                    <button class="btn btn-light dropdown-toggle" type="button" id="users" data-toggle="dropdown" aria-expanded="false">
-                        Usuarios
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="users">
-                        @if (Auth::user()->role_id == 3)
-                        <a class="dropdown-item" href="/users"> Gestiona Usuarios</a>
-                        @endif
-                        <a class="dropdown-item" href="/users/{{Auth::user()->id}}">Datos</a>
-                        <a class="dropdown-item" href="/users/{{Auth::user()->id}}/edit">Edita tus datos</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="btn btn-light dropdown-toggle" type="button" id="actividades" data-toggle="dropdown" aria-expanded="false">
-                        Actividades
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="actividades">
-                        <a class="dropdown-item" href="/activities">Actividades</a>
-
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="btn btn-light dropdown-toggle" type="button" id="sesions" data-toggle="dropdown" aria-expanded="false">
-                        Sesiones
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="sesions">
-                        <a class="dropdown-item" href="/sesions">Sesiones</a>
-                        <a class="dropdown-item" href="/sesions/create">Crear sesiones en un mes</a>
-
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="btn btn-light dropdown-toggle" type="button" id="users" data-toggle="dropdown" aria-expanded="false">
-                        Reservas
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="users">
-                        <a class="dropdown-item" href="/reservas">Reservas por actividad</a>
-                        <a class="dropdown-item" href="/reservas/dias">Reservas por dia</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </div>
-                @endif
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -83,7 +42,6 @@
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
-
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
