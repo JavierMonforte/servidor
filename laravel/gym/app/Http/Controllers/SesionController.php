@@ -181,6 +181,7 @@ class SesionController extends Controller
         //$activities = Activity::with('sesion.monitor')->get();
         $fecha = $request->fecha;
         //$activity = Activity::find($id);
+       // Activity::with('sesion.monitor')->get();
         $sesions = Sesion::where('inicio', 'LIKE', "%$fecha%")->get();
 
         //$sesions = $activity->sesions;

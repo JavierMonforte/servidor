@@ -26,6 +26,7 @@ function crearTabla2(data) {
         $("#destinofiltro").find("table").append("<tr>");
         $("#destinofiltro").find("tr").append("<th>Hora Inicio</th>");
         $("#destinofiltro").find("tr").append("<th>Hora Fin</th>");
+        $("#destinofiltro").find("tr").append("<th>Actividad</th>");
         $("#destinofiltro").find("tr").append("<th>Reservar</th>");
 
 
@@ -36,10 +37,13 @@ function crearTabla2(data) {
             var inicio = elementos[index].inicio;
             var fin = elementos[index].fin;
             var id = elementos[index].id;
+            var actividad = elementos[index].activity_id;
+
             var enlace = "<button class='btn btn-primary btn-sm' id='R" + index + "' value ='" + id + "'> Reservar </button>";
             var fecha = crearFecha(inicio);
             $("#destinofiltro").find("tr").eq(i).append("<td><input type=datetime Sreadonly value='" + fecha + "'></td>");
             $("#destinofiltro").find("tr").eq(i).append("<td><input type=datetime readonly value='" + crearFecha(fin) + "'></td>");
+            $("#destinofiltro").find("tr").eq(i).append("<td>" + actividad + "</td>");
             $("#destinofiltro").find("tr").eq(i).append("<td>" + enlace + "</td>");
 
         }
