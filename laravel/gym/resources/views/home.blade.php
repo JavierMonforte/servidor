@@ -18,6 +18,7 @@
                     {{ __('You are logged in!') }}
 
                 </div>
+                <!--
                 <div>
                     <ul>
                         <li><a href="/activities">Actividades</a>
@@ -45,6 +46,7 @@
                     </ul>
 
                 </div>
+-->
             </div>
         </div>
     </div>
