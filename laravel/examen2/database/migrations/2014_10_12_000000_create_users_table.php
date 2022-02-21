@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -21,6 +21,9 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            //$table->float('peso')->default(0);
+            //$table->foreign('activity_id')->references('id')->on('activities')->onDelete('cascade');
+
         });
     }
 
@@ -33,4 +36,4 @@ return new class extends Migration
     {
         Schema::dropIfExists('users');
     }
-};
+}
